@@ -444,7 +444,7 @@ window.addEventListener('load', async () => {
     // Service Worker Registration for PWA installability
     if ('serviceWorker' in navigator) {
         try {
-            await navigator.serviceWorker.register('sw.js');
+            await navigator.serviceWorker.register('./sw.js');
         } catch (err) {
             console.warn('ServiceWorker registration failed:', err);
         }
