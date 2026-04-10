@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#06b6d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Aura Music">
+    <link rel="apple-touch-icon" href="icon.svg">
+    <link rel="manifest" href="manifest.json">
+
+    <title>Aura Music Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-layout">
+        <!-- Main Content -->
+        <main class="main-view">
+            <!-- Glass Topbar -->
+            <header class="topbar">
+                <div class="search-wrap">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="Search for any song...">
+                </div>
+                <button class="lib-toggle-btn" id="library-toggle"><i class="fa-solid fa-layer-group"></i> My Library</button>
+            </header>
+
+            <div class="scrollable-content">
+                <h1 id="view-title">Discover Music</h1>
+                <div id="loader" class="hidden">
+                    <div class="spinner"></div>
+                </div>
+                <div id="results-grid" class="grid"></div>
+            </div>
+        </main>
+        
+        <!-- Bottom Player -->
+        <div class="glass-player">
+            <div class="now-playing">
+                <img id="cover-art" src="https://via.placeholder.com/80/0f172a/06b6d4?text=NM" alt="Cover">
+                <div class="track-info">
+                    <div class="track-name" id="track-name">No track playing</div>
+                    <div class="track-artist" id="track-artist">-</div>
+                </div>
+                <button class="action-btn" id="save-btn" title="Save to Library"><i class="fa-regular fa-heart"></i></button>
+                <button class="action-btn" id="download-btn" title="Download Offline"><i class="fa-solid fa-download"></i></button>
+            </div>
+            
+            <div class="player-controls">
+                <div class="buttons">
+                    <button class="control-btn" id="shuffle-btn" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+                    <button class="control-btn" id="prev-btn" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
+                    <button class="play-btn" id="play-btn" title="Play/Pause"><i class="fa-solid fa-play"></i></button>
+                    <button class="control-btn" id="next-btn" title="Next"><i class="fa-solid fa-forward-step"></i></button>
+                    <button class="control-btn" id="loop-btn" title="Loop"><i class="fa-solid fa-repeat"></i></button>
+                </div>
+                <div class="seeker-wrap">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="seek-bar" value="0" max="100">
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+            
+            <div class="volume-controls">
+                <i class="fa-solid fa-volume-high"></i>
+                <input type="range" id="volume-bar" value="100" max="100">
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audio-player"></audio>
+    <script src="app.js"></script>
+</body>
+</html>
