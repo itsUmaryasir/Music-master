@@ -1,11 +1,11 @@
-const CACHE_NAME = 'neon-music-v2';
+const CACHE_NAME = 'aura-music-v1';
 const ASSETS = [
-    './',
-    './index.html',
-    './styles.css',
-    './app.js',
-    './manifest.json',
-    './icon.svg'
+    '/palayer/',
+    '/palayer/index.html',
+    '/palayer/styles.css',
+    '/palayer/app.js',
+    '/palayer/manifest.json',
+    '/palayer/icon.svg'
 ];
 
 self.addEventListener('install', (event) => {
